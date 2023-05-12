@@ -18,7 +18,7 @@ export default function Account({ session }) {
     try {
       setLoading(true);
 
-      let { data, error, status } = await supabase
+      let { error, status } = await supabase
         .from("profiles")
         .select(`username, website, avatar_url`)
         .eq("id", user.id)
